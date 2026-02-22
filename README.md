@@ -16,7 +16,7 @@
 * **🧠 Intelligent Skill Gap Analysis:** See exactly what technologies and soft skills you need to learn.
 * **💰 Localized Salary Data:** Get realistic junior, mid, and senior salary ranges in LPA (Lakhs Per Annum).
 * **📈 Job Market Insights:** View hiring trends, top industries, and top locations actively hiring for the role.
-* **🗺️ Custom Learning Roadmap:** Tell the AI how much time you have (e.g., "3 months"), and it generates an exact phase-by-phase study plan.
+* **🗺️ Interactive Inbuilt Planner:** An integrated, milestone-driven personal tracker. Tell the AI how much time you have (e.g., "3 months"), and it builds a phase-by-phase study plan directly inside the app where you can check off topics and visualize your progress percentages.
 * **💾 Auto-Save:** Powered by `localStorage`, your progress and active planner are automatically saved so you never lose your work.
 * **🎨 Modern UI:** A beautiful, responsive design built with CSS glassmorphism, fluid animations, and a dark-mode neon aesthetic.
 

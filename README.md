@@ -1,92 +1,121 @@
-# ⚡ CareerIQ
+<div align="center">
+  <h1>⚡ CareerIQ</h1>
+  <p><strong>AI-Powered Career Intelligence for the Indian Tech Ecosystem</strong></p>
+</div>
 
-**CareerIQ** is an AI-powered career intelligence dashboard tailored for the tech market. 
-Built with React, Vite, and powered by the Google Gemini API, this tool analyzes your current skills and target role to generate highly customized, actionable insights.
+<br />
 
-It gives you exact salary figures in INR, localized job market demand in top tech hubs, and creates a dynamically generated, phase-by-phase learning roadmap that respects exactly how much time you have to learn.
+## 📖 Overview
 
----
-
-## 🚀 Features
-
-- **🧠 Skill Gap Analysis:** Identifies exactly what skills you are missing between your current stack and your dream role.
-- **💰 Salary Intelligence:** Provides junior, mid, and senior level salary expectations (Lakhs Per Annum).
-- **🗺️ Interactive Personal Planner:** Enter a timeframe (e.g., "6 weeks" or "3 months") and the AI will generate a tailored learning path. Track your progress with animated completion percentages.
-- **💾 Local Storage Persistence:** Automatically saves your state, planner progress, and career analysis so you never lose your data on refresh.
-- **🎭 Demo Mode:** Try the app instantly without an API key using the integrated Full Stack Engineer demo.
-- **✨ Premium UI:** Built with sleek "glassmorphism" design, subtle neon gradients, and smooth CSS animations for a beautiful user experience. 
+**CareerIQ** is a modern React application that uses the Google Gemini API to analyze your current skills against your dream job. It generates a comprehensive career report, including a skill gap analysis, accurate salary expectations (in INR), current job market trends in India, and a personalized, phase-by-phase learning roadmap.
 
 ---
 
-## 🛠️ Tech Stack
+## ✨ Features
 
-- **Frontend:** React 18, Vite
-- **Styling:** Vanilla CSS, CSS Variables, Glassmorphism
-- **Routing:** React Router DOM (v6)
-- **AI Integration:** Google Gemini REST API (gemini-1.5-flash / gemini-2.0-flash)
-- **State Management:** React Context API + Local Storage
-
----
-
-## 📦 Installation & Setup
-
-### 1. Clone the repository
-\`\`\`bash
-git clone [your-repo-url]
-cd [your-project-directory]
-\`\`\`
-
-### 2. Install dependencies
-\`\`\`bash
-npm install
-\`\`\`
-
-### 3. Configure the Environment
-Create a `.env` file in the root of your project:
-\`\`\`bash
-touch .env
-\`\`\`
-
-Inside the `.env` file, paste your Gemini API Key:
-\`\`\`env
-VITE_GEMINI_API_KEY=your_api_key_here
-\`\`\`
-*(Grab a free API key from [Google AI Studio](https://aistudio.google.com/).)*
-
-### 4. Start the application!
-\`\`\`bash
-npm run dev
-\`\`\`
-
-The app will start at \`http://localhost:5173\`.
+* **🧠 Intelligent Skill Gap Analysis:** See exactly what technologies and soft skills you need to learn.
+* **💰 Localized Salary Data:** Get realistic junior, mid, and senior salary ranges in LPA (Lakhs Per Annum).
+* **📈 Job Market Insights:** View hiring trends, top industries, and top locations actively hiring for the role.
+* **🗺️ Custom Learning Roadmap:** Tell the AI how much time you have (e.g., "3 months"), and it generates an exact phase-by-phase study plan.
+* **💾 Auto-Save:** Powered by `localStorage`, your progress and active planner are automatically saved so you never lose your work.
+* **🎨 Modern UI:** A beautiful, responsive design built with CSS glassmorphism, fluid animations, and a dark-mode neon aesthetic.
 
 ---
 
-## 🗂️ Project Structure
+## 💻 Tech Stack
 
-\`\`\`text
+* **Framework:** React 18, Vite
+* **Styling:** Vanilla CSS (Vars, Flexbox, CSS Grid)
+* **Routing:** React Router v6
+* **AI Engine:** Google Gemini REST API (`gemini-1.5-flash` / `gemini-2.0-flash`)
+
+---
+
+## 🚀 Getting Started
+
+Follow these steps to set up the project locally on your machine.
+
+### Prerequisites
+
+* **Node.js** (v18 or higher)
+* **npm** (Node Package Manager)
+* A free **Gemini API Key** from [Google AI Studio](https://aistudio.google.com/)
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone [your-repository-url]
+   cd CareerIQ
+   ```
+
+2. **Install all dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Configure Environment Variables:**
+   Create a new file named `.env` in the root folder of the project.
+   ```bash
+   touch .env
+   ```
+   Open the file and add your Gemini API Key exactly like this:
+   ```env
+   VITE_GEMINI_API_KEY=your_actual_api_key_here
+   ```
+
+4. **Start the Development Server:**
+   ```bash
+   npm run dev
+   ```
+   Open `http://localhost:5173` in your browser to see the app!
+
+---
+
+## ☁️ Deployment (Vercel)
+
+If you are deploying this project to **Vercel**, you must manually add the API key to your Vercel project settings, because the `.env` file is ignored by Git.
+
+1. Push your code to a GitHub repository.
+2. Import the repository into Vercel.
+3. Before clicking Deploy, open the **Environment Variables** section.
+4. Add the Key: `VITE_GEMINI_API_KEY` and paste your API key as the value.
+5. Click **Deploy**.
+
+*(If you already deployed, go to Settings > Environment Variables, add the key, and then redeploy your build).*
+
+---
+
+## 📂 Project Structure
+
+```text
 src/
-├── components/          # Reusable UI components (Navbar, OverviewTab, MarketValueTab, etc.)
-├── screens/             # Main application views
-│   ├── HomeScreen.jsx   # Landing page & initial input form
-│   ├── Dashboard.jsx    # Tabbed interface showing the AI analysis
-│   └── PersonalPlanner.jsx # Interactive roadmap tracking
-├── services/            # API integration and logic
-│   ├── gemini.js        # Core Google Gemini REST API fetches
-│   └── demoData.js      # Mocked JSON data for the Demo Mode
-├── App.jsx              # Global Context Provider & Routing
-├── index.css            # Global design tokens and base styles
-└── main.jsx             # React DOM entry point
-\`\`\`
+├── components/         # Reusable UI components
+│   ├── Navbar.jsx
+│   └── tabs/
+│       ├── OverviewTab.jsx
+│       ├── MarketValueTab.jsx
+│       ├── JobMarketTab.jsx
+│       ├── RoadmapTab.jsx
+│       └── tabs.css
+│
+├── screens/            # Main application views
+│   ├── HomeScreen.jsx
+│   ├── Dashboard.jsx
+│   └── PersonalPlanner.jsx
+│
+├── services/           # API logic
+│   ├── gemini.js
+│   └── demoData.js
+│
+├── App.jsx             # Global Context + Routing
+├── index.css           # Global styles
+└── main.jsx            # Entry point
+```
 
 ---
 
-## 📝 Usage Notes & Troubleshooting
+## ⚠️ Troubleshooting
 
-- **Rate Limiting:** The free tier of the Gemini API has rate limits (Error 429 `RESOURCE_EXHAUSTED`). If the app fails to generate a plan, wait 2-3 minutes and try again.
-- **Empty State on Planner:** The Personal Planner requires you to actively type a timeframe (e.g., "2 weeks") and hit Generate to build a custom roadmap via the AI.
-- **Data Deletion:** If you wish to clear your saved progress, click the "Change Goal" button in the Dashboard. This safely wipes Local Storage and redirects you to the start.
-
----
-
-*Designed and Built for the Indian Tech Ecosystem.*
+* **"Failed to analyze career" Error:** Make sure your `.env` file is named exactly `.env` (no extension) and the variable starts with `VITE_`.
+* **Rate Limit Exceeded (Error 429):** The free tier of the Gemini API limits requests per minute. If the app stops generating plans, wait 2-3 minutes for the limit to reset and try again.
